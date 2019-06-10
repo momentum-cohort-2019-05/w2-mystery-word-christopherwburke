@@ -1,18 +1,18 @@
-#load words.txt into a list
+import random
 
-all_words = open('words.txt', 'r')
-full_word_list = [all_words.rstrip('\n')]
+#first, just open the file and output the words to a list. we'll separate into difficulty later.
+with open("words.txt") as file:
+    string = file.read()
+    full_word_list = string.split()
+    
+#then given the full word list, choose a random word and assign it to the mystery word variable
 
-#sort list into three separate lists, based on length of the word
+mystery_word = random.choice(full_word_list)
+print(mystery_word)
 
-diff_level = input('Welcome to Mystery Word! Please choose your difficult level. Type "Easy" for Easy, "Medium" for Medium, or "Hard" for Hard. ')
-print(f"You have chosen {diff_level}! Let's begin.") # might need a loop here so if they enter something other than Easy/Medium/Hard, it will return them 
+print(len(mystery_word))
+print("_" * len(mystery_word))
 
-if diff_level == easy
-    then r
+#then write a function that counts the number of characters in the mystery word string, and prints to screen a number of underscores equal to the length of that string.
 
-
-# mystery_word = (needs to randomly select a word from the chosen list)
-guess_count = []g
-wrong_guess_limit = 8
-
+#then capture user input for the guessed letter. need a loop where if the guessed character is in the word, it will print the location of the guessed letter to screen, replacing the underscore. if not, it will increment the wrong guess count up one. then return to the beginning of the loop UNLESS the guess count has been reached. if it has, then break and print the "you lost" message.
